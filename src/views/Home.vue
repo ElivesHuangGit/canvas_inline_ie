@@ -19,67 +19,68 @@
             @select="handleSelect"
             background-color="#4946A9"
             text-color="#fff"
+            ref="mean"
             active-text-color="#ffd04b">
-            <el-menu-item index="1" class="modify-mean">首页</el-menu-item>
+            <el-menu-item index="1" class="modify-mean" :class="{'activeFristBg':menu_index}"><a href="http://www.mjcagt.com">首页</a></el-menu-item>
             <el-submenu
               index="3" class="modify-mean">
-              <template class="hh" slot="title">公司</template>
+              <template class="hh" slot="title"><a href="http://www.mjcagt.com/about/showarticle.asp?articleid=24">公司</a></template>
               <div class="my-sub-nav">
-                  <el-menu-item align="center" class="" index="3-1">二级1</el-menu-item>
-                  <el-menu-item align="center" class="" index="3-2">二级2</el-menu-item>
-                  <el-menu-item align="center" class="" index="3-3">二级3</el-menu-item>
+                <el-menu-item align="center" class="twoj" index="3-1"><a href="http://www.mjcagt.com/about/showarticle.asp?articleid=24">公司简介</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="3-2"><a href="http://www.mjcagt.com/about/showarticle.asp?articleid=25">美国MJC简介</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="3-3"><a href="http://www.mjcagt.com/about/showarticle.asp?articleid=41">荣誉&资质</a></el-menu-item>
               </div>
             </el-submenu>
             <el-submenu
               index="2" class="modify-mean">
-              <template class="hh" slot="title">机器</template>
+              <template class="hh act" slot="title"><a href="http://www.mjcagt.com/machine/index.html">机器</a></template>
               <div class="my-sub-nav">
                 <el-submenu index="2-1">
                   <template slot="title" align="center">大气瓶内胆设备</template>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-1"><a href="#">OSC-9.75</a></el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-2">OSC-11.100</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-3">OSC-16.200</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-4">OSC-24.300</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-5">OSC-26.300</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-6">OSC-28.450</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-7">SPT-975-3</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-8">SPT-1275-3</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33">OSC-9.75</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33">OSC-11.100</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33">OSC-16.200</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-4"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33">OSC-24.300</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-5"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33">OSC-26.300</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-6"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33">OSC-28.450</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-7"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">SPT-975-3</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-8"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">SPT-1275-3</a></el-menu-item>
                 </el-submenu>
                 <el-submenu index="2-7">
                   <template slot="title" align="center">小气瓶内胆设备</template>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-7-1">SPT-9.40</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-7-2">SPT-10.75</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-7-3">SPT-20.150</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-7-4">SPT-26.150</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-7-5">RFN200T-4(RFN350)</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-7-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">SPT-9.40</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-7-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">SPT-10.75</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-7-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">SPT-20.150</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-7-4"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">SPT-26.150</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-7-5"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=38">RFN200T-4(RFN350)</a></el-menu-item>
                 </el-submenu>
                 <el-submenu index="2-2">
                   <template slot="title" align="center">强力旋压成形机</template>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-2-1">F450.2000-4</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-2-2">F450.3000-4</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-2-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=77">F450.2000-4</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-2-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=76">F450.3000-4</a></el-menu-item>
                   <el-menu-item align="center" class="add-bord-sty" index="2-2-3">F600.2000-4</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-2-4">F1200.2000-4</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-2-4"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=78">F1200.2000-4</a></el-menu-item>
                   <el-menu-item align="center" class="add-bord-sty" index="2-2-5">F1300.3000-4</el-menu-item>
                 </el-submenu>
                 <el-submenu index="2-3">
                   <template slot="title" align="center"> SP系列数控旋压机</template>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-1">SP-32.30</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-2">SP-42.50</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-3">SP-48.100</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-4">SP-48.150-4</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-6">SP-72.100</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-5">SP-60.100</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-7">SP-78.200-3</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-3-8">SP-850-4</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-32.30</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-42.50</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-48.100</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-4"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-48.150-4</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-6"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-72.100</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-5"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-60.100</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-7"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-78.200-3</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-3-8"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35">SP-850-4</a></el-menu-item>
                 </el-submenu>
                 <el-submenu index="2-4">
                   <template slot="title" align="center">轮毂旋压机</template>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-4-1">WS-700.400-4</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-4-2">WSV-24.150-3</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-4-3">WSV-24.200-3</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-4-1">WSV-26.150-3</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-4-2">WSV-26.150-2</el-menu-item>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-4-3">WSV-26.300-3</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-4-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=37">WS-700.400-4</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-4-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36">WSV-24.150-3</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-4-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36">WSV-24.200-3</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-4-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36">WSV-26.150-3</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-4-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36">WSV-26.150-2</a></el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-4-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36">WSV-26.300-3</a></el-menu-item>
                   <el-menu-item align="center" class="add-bord-sty" index="2-4-3">RFN200T-4(RFN350)</el-menu-item>
                 </el-submenu>
                 <el-submenu index="2-5">
@@ -93,37 +94,48 @@
                 </el-submenu>
               </div>
             </el-submenu>
-            <el-menu-item index="4" class="modify-mean">软件和服务</el-menu-item>
-            <el-menu-item index="5" class="modify-mean">信息博采</el-menu-item>
-            <el-menu-item index="6" class="modify-mean">视频</el-menu-item>
-            <el-menu-item index="7" class="modify-mean">联系方式</el-menu-item>
+            <!-- <el-menu-item index="4" class="modify-mean">软件和服务</el-menu-item> -->
             <el-submenu
+              index="4" class="modify-mean">
+              <template class="hh" slot="title"><a href="http://www.mjcagt.com/mjcsoft/">软件和服务</a></template>
+              <div class="my-sub-nav">
+                <el-menu-item align="center" class="twoj" index="4-1"><a href="http://www.mjcagt.com/mjcsoft/#spincad">SpinCAD®</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="4-2"><a href="http://www.mjcagt.com/mjcsoft/#gaizao">机器改造</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="4-3"><a href="http://www.mjcagt.com/mjcsoft/#shengji">机器数码升级</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="4-4"><a href="http://www.mjcagt.com/mjcsoft/#jiqiren">配套机器人</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="4-5"><a href="http://www.mjcagt.com/mjcsoft/#yeya">绿色液压动力</a></el-menu-item>
+              </div>
+            </el-submenu>
+            <el-menu-item index="5" class="modify-mean"><a href="http://www.mjcagt.com/article/">信息博采</a></el-menu-item>
+            <el-menu-item index="6" class="modify-mean"><a href="http://www.mjcagt.com/productcase/">视频</a></el-menu-item>
+            <el-menu-item index="7" class="modify-mean"><a href="http://www.mjcagt.com/about/Showarticle.asp?articleID=82">联系方式</a></el-menu-item>
+            <!-- <el-submenu
               index="8" class="modify-mean">
               <template class="hh" slot="title">成功案例</template>
               <div class="my-sub-nav">
-                <el-menu-item align="center" class="" index="8-1">二级1</el-menu-item>
-                <el-menu-item align="center" class="" index="8-2">二级2</el-menu-item>
-                <el-menu-item align="center" class="" index="8-3">二级3</el-menu-item>
+                <el-menu-item align="center" class="twoj" index="8-1"><a href="http://www.mjcagt.com/case/Showarticle.asp?articleID=85">重庆宝钢案例</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="8-2"><a href="http://www.mjcagt.com/case/Showarticle.asp?articleID=131">柳州轮毂案例</a></el-menu-item>
+                <el-menu-item align="center" class="twoj" index="8-3"><a href="http://www.mjcagt.com/case/Showarticle.asp?articleID=134">张家港富瑞氢能案例</a></el-menu-item>
               </div>
-            </el-submenu>
+            </el-submenu> -->
           </el-menu>
         </div>
         <div class="pan">
           <canvas id="canvas1" width="992" height="312"></canvas>
           <div class="line_war">点击线条查看对应型号与成品，建议使用Chrome浏览器或者360等浏览器的极速模式浏览。</div>
-          <img src="../assets/product1.png" class="popWin" v-if="visible" alt="" />
+          <img :src="img_src" class="popWin" v-if="visible" alt="" />
         </div>
       </div>
     </div>
     <div class="swiper-container swiperDiv" id="swipper1" ref="mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide swiper-add-1"><img src="../assets/product1.png" alt="这是第1张"></div>
-        <div class="swiper-slide swiper-add-2"><img src="../assets/product2.png" alt="这是第2张"></div>
-        <div class="swiper-slide swiper-add-3"><img src="../assets/product3.png" alt="这是第3张"></div>
-        <div class="swiper-slide swiper-add-4"><img src="../assets/product4.png" alt="这是第4张"></div>
-        <div class="swiper-slide swiper-add-5"><img src="../assets/product5.png" alt="这是第5张"></div>
-        <div class="swiper-slide swiper-add-6"><img src="../assets/product6.png" alt="这是第6张"></div>
-        <div class="swiper-slide swiper-add-7"><img src="../assets/product7.png" alt="这是第7张"></div>
+        <div class="swiper-slide swiper-add-1"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product1.png" alt="这是第1张"></div>
+        <div class="swiper-slide swiper-add-2"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product2.png" alt="这是第2张"></div>
+        <div class="swiper-slide swiper-add-3"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product3.png" alt="这是第3张"></div>
+        <div class="swiper-slide swiper-add-4"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product4.png" alt="这是第4张"></div>
+        <div class="swiper-slide swiper-add-5"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product5.png" alt="这是第5张"></div>
+        <div class="swiper-slide swiper-add-6"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product6.png" alt="这是第6张"></div>
+        <div class="swiper-slide swiper-add-7"><div class="pic_shadow"><text>水平垂直</text></div><img src="../assets/product7.png" alt="这是第7张"></div>
       </div>
     </div>
   </div>
@@ -134,6 +146,11 @@
     margin: 0;
     padding: 0;
     border: none;
+  }
+  a{
+    text-decoration:none;
+    cursor: pointer;
+    color: #fff;
   }
   .swiper-wrapper{
     transition-timing-function: linear;
@@ -159,11 +176,20 @@
     line-height: 36px !important;
     width: 138px;
   }
+  .modify-mean:hover{
+    background: url('../assets/menu_bg.png') no-repeat center !important;
+  }
+  .activeFristBg{
+    background: url('../assets/menu_bg.png') no-repeat center !important;
+  }
   .modify-mean. el-submenu__title{
     height: 36px !important;
     background: -webkit-gradient(linear, left bottom, left top, from(#190a5d), color-stop(#5251b7), to(#190a5d)) !important;
     background: linear-gradient(0deg, #190a5d, #5251b7, #190a5d) !important;
     line-height: 36px !important;
+  }
+  .modify-mean.el-submenu.act{
+    background:#fff;
   }
   #nav a {
     font-weight: 700;
@@ -234,7 +260,7 @@
   }
   .home .nav {
     padding: 0 4px;
-    width:1120px;
+    width:1010px;
     margin:0 auto;
   }
 
@@ -312,11 +338,7 @@
     background: #4946a9 !important;
     border-bottom: 1px solid #fff
   }
-  .el-submenu .add-bord-sty a{
-    text-decoration: none !important;
-    out-line: none !important;
-    color: #fff;
-  }
+
   .el-submenu .add-bord-sty {
     border: 1px dotted red !important;
     border-radius: 6px;
@@ -345,41 +367,47 @@
       background-position: 992px top
     }
   }
-
-  @-webkit-keyframes borderColor-data-v-2459bd86 {
+@-webkit-keyframes borderColor-data-v-2459bd86 {
     0% {
-      -webkit-box-shadow: 0 0 8px 4px #83582d;
-      box-shadow: 0 0 8px 4px #83582d
+      -webkit-box-shadow: 0 0 8px 4px #ffea00;
+      box-shadow: 0 0 5px rgba(255, 0, 0, .2), inset 0 0 5px rgba(255, 0, 0, .1), 0 1px 0 #ffea00;
     }
     50% {
-      -webkit-box-shadow: 0 0 0 0 #83582d;
-      box-shadow: 0 0 0 0 #83582d
+      -webkit-box-shadow: 0 0 0 0 #ff0000;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1), inset 0 0 10px rgba(255, 0, 0, .4), 0 1px 0 #ff0000;
     }
     to {
-      -webkit-box-shadow: 0 0 8px 4px #83582d;
-      box-shadow: 0 0 8px 4px #83582d
+      -webkit-box-shadow: 0 0 8px 4px #ffea00;
+      box-shadow: 0 0 5px rgba(255, 0, 0, .2), inset 0 0 5px rgba(255, 0, 0, .1), 0 1px 0 #ffea00;
     }
   }
 
   @keyframes borderColor-data-v-2459bd86 {
     0% {
-      -webkit-box-shadow: 0 0 8px 4px #83582d;
-      box-shadow: 0 0 8px 4px #83582d
+      -webkit-box-shadow: 0 0 8px 4px #ffea00;
+      box-shadow: 0 0 5px rgba(255, 0, 0, .2), inset 0 0 5px rgba(255, 0, 0, .1), 0 1px 0 #ffea00;
     }
     50% {
-      -webkit-box-shadow: 0 0 0 0 #83582d;
-      box-shadow: 0 0 0 0 #83582d
+      -webkit-box-shadow: 0 0 0 0 #ff0000;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1), inset 0 0 10px rgba(255, 0, 0, .4), 0 1px 0 #ff0000;
     }
     to {
-      -webkit-box-shadow: 0 0 8px 4px #83582d;
-      box-shadow: 0 0 8px 4px #83582d
+      -webkit-box-shadow: 0 0 8px 4px #ffea00;
+      box-shadow: 0 0 5px rgba(255, 0, 0, .2), inset 0 0 5px rgba(255, 0, 0, .1), 0 1px 0 #ffea00;
     }
   }
-  .add-bord-sty:hover{
+    .twoj{
+    text-align: left;
+  }
+  .twoj a{
+    color: #fff;
+    text-align: left;
+   }
+  .add-bord-sty:hover {
     background-color: #fff !important;
     color:rgba(0, 0, 0, 1) !important;
   }
-  .add-bord-sty a:link, .el-submenu .add-bord-sty a{
+  .add-bord-sty:hover a{
     color:rgba(0, 0, 0, 1) !important;
   }
   .el-submenu__title:hover{
@@ -414,6 +442,7 @@
     font-size: 18px;
     background: #fff;
     height:92px !important;
+    position: relative;
     -webkit-backface-visibility: hidden !important;
     /* Center slide text vertically */
     display: -webkit-box;
@@ -428,6 +457,22 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+  }
+  .swiper-slide .pic_shadow{
+    display: none;
+  }
+  .pic_shadow text{
+    line-height: 82px;
+  }
+  .swiper-slide:hover .pic_shadow{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    display: block;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
   }
   .swiper-wrapper {
     -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
@@ -454,6 +499,9 @@ export default {
       defaultOpen: [],
       isChange: false,
       visible: false,
+      bannerPicIndex: 0,
+      img_src: '',
+      menu_index: true,
       currentRedIndex: 0,
       currentBackground: 'unSelectBackground',
       context: '',
@@ -500,7 +548,12 @@ export default {
     })
     comtainer.addEventListener('mouseleave', function () {
       console.log(':::::kkkkkk')
-      _this.mySwiper.startAutoplay()
+      setTimeout(function () {
+        _this.mySwiper.startAutoplay()
+      }, 1000)
+      // if (swiperMoveTimer) {
+      //   clearTimeout(swiperMoveTimer)
+      // }
     })
     document.addEventListener('mousemove', function (e) {
       e = e || window.event
@@ -508,7 +561,6 @@ export default {
       _this.isDisplayLine = {}
       document.getElementById('canvas1').style.cursor = 'default'
       _this.drawCanvas(ctx1, p, e)
-      // timer1 = false
       if (!timer1) {
         timer1 = setTimeout(function () {
           var p = _this.getEventPosition(e)
@@ -536,6 +588,9 @@ export default {
   methods: {
     handleSelect (key, keyPath) {
       var _this = this
+      if (key !== '1') {
+        this.menu_index = false
+      }
       var point = { x: 0, y: 0 }
       if (keyPath && keyPath[1]) {
         _this.currentBackground = 'selectBackground'
@@ -643,6 +698,12 @@ export default {
         if (event && event.type === 'click') {
           _this.currentBackground = 'selectBackground'
           _this.defaultOpen = [ ...meanIndex ]
+          // console.log('_this.defaultOpen:')
+          // console.log(_this.defaultOpen)
+          // console.log(_this.$refs.mean)
+          // var domIndex = _this.defaultOpen[1].split('-')
+          // console.log(_this.$refs.mean.$children[_this.defaultOpen[0]].$children[domIndex[1]].style)
+          // _this.$refs.mean.$children[_this.defaultOpen[0]].$children[domIndex[1]].style.cssText = 'border-bottom-color: transparent; color: rgb(255, 255, 255); background-color: rgb(73, 70, 169);'
           _this.isChange = true
           if (_this.compIePoint(ctx, point.x, point.y)) {
             _this.currentRedIndex = currentLineIndex
@@ -795,6 +856,13 @@ export default {
       // var domArr2Ope = [ ...domArr2 ]
       // var domArrLength = domArrOpe.length
       var myClassName = className
+      if (className) {
+        var picIndex = className.split('-')
+        if (picIndex[2]) {
+          _this.bannerPicIndex = picIndex[2]
+          _this.img_src = require('@/assets/product' + this.bannerPicIndex + '.png')
+        }
+      }
       domArr2Ope = document.getElementsByClassName(myClassName)
       domArrOpe = document.getElementsByClassName('swiper-slide')
       var domArrLength = domArrOpe.length
