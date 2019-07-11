@@ -3,6 +3,11 @@
     <div :class="currentBackground">
       <div class="page-banner">
         <div class="top">
+          <div class=top_b>
+            <div class=slogo><img src="http://www.mjcagt.com/Images/slogo.png" width=161 height=55 /></div>
+            <div class=twenzi>  </div>
+            <div class=mlogo><img src="http://www.mjcagt.com/Images/mlogo_new.png" width=98 height=55 /></div>
+          </div>
         </div>
         <div class="nav">
           <el-menu
@@ -16,14 +21,22 @@
             text-color="#fff"
             active-text-color="#ffd04b">
             <el-menu-item index="1" class="modify-mean">首页</el-menu-item>
-            <el-menu-item index="3" class="modify-mean">公司</el-menu-item>
+            <el-submenu
+              index="3" class="modify-mean">
+              <template class="hh" slot="title">公司</template>
+              <div class="my-sub-nav">
+                  <el-menu-item align="center" class="" index="3-1">二级1</el-menu-item>
+                  <el-menu-item align="center" class="" index="3-2">二级2</el-menu-item>
+                  <el-menu-item align="center" class="" index="3-3">二级3</el-menu-item>
+              </div>
+            </el-submenu>
             <el-submenu
               index="2" class="modify-mean">
               <template class="hh" slot="title">机器</template>
               <div class="my-sub-nav">
                 <el-submenu index="2-1">
                   <template slot="title" align="center">大气瓶内胆设备</template>
-                  <el-menu-item align="center" class="add-bord-sty" index="2-1-1">OSC-9.75</el-menu-item>
+                  <el-menu-item align="center" class="add-bord-sty" index="2-1-1"><a href="#">OSC-9.75</a></el-menu-item>
                   <el-menu-item align="center" class="add-bord-sty" index="2-1-2">OSC-11.100</el-menu-item>
                   <el-menu-item align="center" class="add-bord-sty" index="2-1-3">OSC-16.200</el-menu-item>
                   <el-menu-item align="center" class="add-bord-sty" index="2-1-4">OSC-24.300</el-menu-item>
@@ -84,24 +97,33 @@
             <el-menu-item index="5" class="modify-mean">信息博采</el-menu-item>
             <el-menu-item index="6" class="modify-mean">视频</el-menu-item>
             <el-menu-item index="7" class="modify-mean">联系方式</el-menu-item>
+            <el-submenu
+              index="8" class="modify-mean">
+              <template class="hh" slot="title">成功案例</template>
+              <div class="my-sub-nav">
+                <el-menu-item align="center" class="" index="8-1">二级1</el-menu-item>
+                <el-menu-item align="center" class="" index="8-2">二级2</el-menu-item>
+                <el-menu-item align="center" class="" index="8-3">二级3</el-menu-item>
+              </div>
+            </el-submenu>
           </el-menu>
         </div>
         <div class="pan">
-          <canvas id="canvas1" width="992" height="312">
-          </canvas>
-          <img src="../assets/bg1.png" class="popWin" v-if="visible" alt="" />
+          <canvas id="canvas1" width="992" height="312"></canvas>
+          <div class="line_war">点击线条查看对应型号与成品，建议使用Chrome浏览器或者360等浏览器的极速模式浏览。</div>
+          <img src="../assets/product1.png" class="popWin" v-if="visible" alt="" />
         </div>
       </div>
     </div>
     <div class="swiper-container swiperDiv" id="swipper1" ref="mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide swiper-add-1"><img src="../assets/swiper.png" alt="这是第1张"></div>
-        <div class="swiper-slide swiper-add-2"><img src="../assets/swiper.png" alt="这是第2张"></div>
-        <div class="swiper-slide swiper-add-3"><img src="../assets/swiper.png" alt="这是第3张"></div>
-        <div class="swiper-slide swiper-add-4"><img src="../assets/swiper.png" alt="这是第4张"></div>
-        <div class="swiper-slide swiper-add-5"><img src="../assets/swiper.png" alt="这是第5张"></div>
-        <div class="swiper-slide swiper-add-6"><img src="../assets/swiper.png" alt="这是第6张"></div>
-        <div class="swiper-slide swiper-add-7"><img src="../assets/swiper.png" alt="这是第7张"></div>
+        <div class="swiper-slide swiper-add-1"><img src="../assets/product1.png" alt="这是第1张"></div>
+        <div class="swiper-slide swiper-add-2"><img src="../assets/product2.png" alt="这是第2张"></div>
+        <div class="swiper-slide swiper-add-3"><img src="../assets/product3.png" alt="这是第3张"></div>
+        <div class="swiper-slide swiper-add-4"><img src="../assets/product4.png" alt="这是第4张"></div>
+        <div class="swiper-slide swiper-add-5"><img src="../assets/product5.png" alt="这是第5张"></div>
+        <div class="swiper-slide swiper-add-6"><img src="../assets/product6.png" alt="这是第6张"></div>
+        <div class="swiper-slide swiper-add-7"><img src="../assets/product7.png" alt="这是第7张"></div>
       </div>
     </div>
   </div>
@@ -112,6 +134,12 @@
     margin: 0;
     padding: 0;
     border: none;
+  }
+  .swiper-wrapper{
+    transition-timing-function: linear;
+    -moz-transition-timing-function: linear; /* Firefox 4 */
+    -webkit-transition-timing-function: linear; /* Safari 和 Chrome */
+    -o-transition-timing-function: linear; /* Opera */
   }
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -147,6 +175,8 @@
 
   .selectBorder {
     border: 4px dotted red !important;
+    /*-webkit-animation: borderColor-data-v-2459bd86 2s linear infinite;*/
+    /*animation: borderColor-data-v-2459bd86 2s linear infinite;*/
     height: auto
   }
   /*//这是样式修改*/
@@ -172,12 +202,39 @@
 
   .home .top {
     width: 992px;
-    height: 92px
+    height: 92px;
+    margin:0 auto;
   }
-
+  .top .top_b {
+      width: 992px;
+      height: 74px;
+      padding-top: 20px;
+      margin: 0 auto;
+  }
+  .top .slogo {
+    float: left;
+    width: 161px;
+    height: 55px;
+    padding-left: 30px;
+    text-align: left;
+  }
+  .top .twenzi {
+    float: left;
+    width: 542px;
+    height: 52px;
+    text-align: center;
+    padding-top: 15px;
+  }
+  .top .mlogo {
+    float: right;
+    width: 98px;
+    height: 55px;
+    padding-right: 26px;
+    text-align: right;
+  }
   .home .nav {
     padding: 0 4px;
-    width:992px;
+    width:1120px;
     margin:0 auto;
   }
 
@@ -211,18 +268,19 @@
   .home .pan {
     padding-top: 16px;
     width: 100%;
-    height: 296px;
+    height: 322px;
     text-align:center;
     margin:0 auto;
     position: relative;
   }
 
   .home .pan #canvas1 {
-    background: url(../assets/bg3.png) 95px 60px no-repeat;
+    background: url('http://www.mjcagt.com/static/bg3.png') 95px 60px no-repeat;
+    position: relative;
   }
 
   .home .swiperDiv {
-    height: 90px;
+    height: 99px;
     margin-top: 8px;
     width: 992px;
   }
@@ -233,6 +291,7 @@
   .home .swiperDiv .swiper-wrapper .swiper-slide img {
     height: 82px;
     width: 148px !important;
+    display: block;
   }
 
   .swiper-container-free-mode .swiper-wrapper {
@@ -253,7 +312,11 @@
     background: #4946a9 !important;
     border-bottom: 1px solid #fff
   }
-
+  .el-submenu .add-bord-sty a{
+    text-decoration: none !important;
+    out-line: none !important;
+    color: #fff;
+  }
   .el-submenu .add-bord-sty {
     border: 1px dotted red !important;
     border-radius: 6px;
@@ -312,8 +375,11 @@
       box-shadow: 0 0 8px 4px #83582d
     }
   }
-  .add-bord-sty:hover {
+  .add-bord-sty:hover{
     background-color: #fff !important;
+    color:rgba(0, 0, 0, 1) !important;
+  }
+  .add-bord-sty a:link, .el-submenu .add-bord-sty a{
     color:rgba(0, 0, 0, 1) !important;
   }
   .el-submenu__title:hover{
@@ -331,14 +397,23 @@
     width:150px;
     height:200px;
   }
+  .line_war{
+    position: absolute;
+    top:10%;
+    left:20%;
+    color: #ffff00;
+    font-size: 16px;
+    font-weight: 100;
+  }
   .swiper-container {
     width: 100%;
-    height: 100%;
+    height: 92px;
   }
   .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
+    height:92px !important;
     -webkit-backface-visibility: hidden !important;
     /* Center slide text vertically */
     display: -webkit-box;
@@ -363,10 +438,10 @@
     margin: 0 auto !important;
   }
   .unSelectBackground {
-    background-color: #5b76cd;
+    background-color: #4d6dd6;
   }
   .selectBackground {
-    background-color: #91b1fe;
+    background-color: #6587f9;
   }
 </style>
 
@@ -382,7 +457,11 @@ export default {
       currentRedIndex: 0,
       currentBackground: 'unSelectBackground',
       context: '',
-      mySwiper: null
+      flag: false,
+      mySwiper: null,
+      imageDataFlag: false,
+      isDisplayLine: {},
+      isDisplayMoveIndex: 0 // 记录鼠标移动到哪个index
     }
   },
   mounted () {
@@ -398,36 +477,52 @@ export default {
       _this.mySwiper = new Swiper('#swipper1', {
         loop: true, // 循环模式选项
         // loopAdditionalSlides:3,
-        autoplay: 0,
+        autoplay: {
+          delay: 0
+        },
         autoplayDisableOnInteraction: false,
-        speed: 1,
+        speed: 1600,
         slidesPerView: 6,
         // loopedSlides: 3,
         // spaceBetween: 15,
         freeMode: true,
+        roundLengths: true,
         observer: true
       })
-      console.log(_this.mySwiper)
       _this.mySwiper.startAutoplay()
     }, 0)
-    // var timer1 = null
+    var timer1 = null
     var timer2 = null
+    var comtainer = document.getElementById('swipper1')
+    comtainer.addEventListener('mouseenter', function () {
+      console.log(':::::mmmm')
+      _this.mySwiper.stopAutoplay()
+    })
+    comtainer.addEventListener('mouseleave', function () {
+      console.log(':::::kkkkkk')
+      _this.mySwiper.startAutoplay()
+    })
     document.addEventListener('mousemove', function (e) {
-      e = window.event || e
+      e = e || window.event
       var p = _this.getEventPosition(e)
+      _this.isDisplayLine = {}
+      document.getElementById('canvas1').style.cursor = 'default'
       _this.drawCanvas(ctx1, p, e)
       // timer1 = false
-      // if (!timer1) {
-      //   timer1 = setTimeout(function () {
-      //     var p = _this.getEventPosition(e)
-      //     // console.log(p)
-      //     _this.drawCanvas(ctx1, p, e)
-      //     timer1 = false
-      //   }, 10)
-      // }
+      if (!timer1) {
+        timer1 = setTimeout(function () {
+          var p = _this.getEventPosition(e)
+          // console.log(p)
+          _this.drawCanvas(ctx1, p, e)
+          timer1 = false
+        }, 10)
+      }
     }, false)
     document.addEventListener('click', function (e) {
-      e = window.event || e
+      e = e || window.event
+      console.log('isDisplayMoveIndex:')
+      console.log(_this.isDisplayMoveIndex)
+      console.log(_this.isDisplayLine)
       if (!timer2) {
         timer2 = setTimeout(function () {
           var p = _this.getEventPosition(e)
@@ -451,7 +546,8 @@ export default {
           point = { x: 588, y: 170 }
           this.currentRedIndex = 2
         } else if (keyPath[1] === '2-3') {
-          point = { x: 788, y: 52 }
+          // point = { x: 788, y: 52 }
+          point = { x: 0, y: 0 }
           this.currentRedIndex = 3
         } else if (keyPath[1] === '2-4') {
           point = { x: 780, y: 205 }
@@ -479,33 +575,37 @@ export default {
           _this.swiperSelet('swiper-add-' + meanClick[1], parseInt('1'))
         }
       }
-      console.log('dd  ' + key, keyPath)
     },
     getEventPosition (ev) {
+      ev = ev || window.event
       var x, y
+      // var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft
+      // var scrollY = document.documentElement.scrollTop || document.body.scrollTop
+      // x = ev.pageX || ev.clientX + scrollX
+      // y = ev.pageY || ev.clientY + scrollY
       if (ev.layerX || ev.layerX === 0) {
-        x = ev.layerX
-        y = ev.layerY
+        x = parseInt(ev.layerX)
+        y = parseInt(ev.layerY)
       } else if (ev.offsetX || ev.offsetX === 0) { // Opera
-        x = ev.offsetX
-        y = ev.offsetY
+        x = parseInt(ev.offsetX)
+        y = parseInt(ev.offsetY)
       }
       return { x: x, y: y }
     },
     compIePoint (ctx, x, y) {
-      if (!ctx.isPointInStroke) {
+      if (ctx.isPointInStroke) {
         return ctx.isPointInStroke(x, y)
       } else {
-        console.log('1111111')
-        if (ctx.getImageData(x, y, 2, 2).data[3] !== 0) {
-          console.log('yyyyyyyyyyyyyy')
-          console.log(ctx.getImageData(x, y, 2, 2).data[3])
+        if (ctx.getImageData(x, y, 1, 1).data[3] !== 0) {
+          console.log('getImageData-3:' + ctx.getImageData(x, y, 1, 1).data[3])
+          // this.imageDataFlag = !this.imageDataFlag
           return true
         } else {
-          console.log('333333333')
-          console.log(ctx.getImageData(x, y, 2, 2).data[3])
+          console.log('NNNNNNNNNNNN::::' + ctx.getImageData(x, y, 1, 1).data[3])
+          // this.imageDataFlag = !this.imageDataFlag
           return false
         }
+        // return ctx.isPointInPath(x, y)
       }
     },
     BezierEllipse2 (ctx, x, y, a, b) {
@@ -522,24 +622,28 @@ export default {
     },
     strokeFn (ctx, point, event, meanIndex, currentLineIndex) {
       var _this = this
+      _this.isDisplayMoveIndex = currentLineIndex
       if (event && event.type === 'click' && !(_this.compIePoint(ctx, point.x, point.y)) && !_this.isChange) {
         _this.currentRedIndex = 0
-        console.log(_this.currentRedIndex)
-        console.log('nnnnnnnnnnn')
-        console.log(ctx.getImageData(point.x, point.y, 1, 1))
+        _this.isDisplayLine = {}
       }
       if (_this.compIePoint(ctx, point.x, point.y) || _this.currentRedIndex === currentLineIndex) {
         ctx.save()
         ctx.strokeStyle = 'red'
+        if (currentLineIndex !== 0 && currentLineIndex !== ' ') {
+          var itemLineObj = {}
+          itemLineObj[currentLineIndex] = true
+          Object.assign(_this.isDisplayLine, itemLineObj)
+        } else {
+          _this.isDisplayLine = {}
+        }
+        document.getElementById('canvas1').style.cursor = 'pointer'
         ctx.stroke()
         ctx.restore()
         if (event && event.type === 'click') {
-          console.log(meanIndex)
           _this.currentBackground = 'selectBackground'
           _this.defaultOpen = [ ...meanIndex ]
           _this.isChange = true
-          console.log('uuuuuuuu')
-          console.log(ctx.getImageData(point.x, point.y, 1, 1))
           if (_this.compIePoint(ctx, point.x, point.y)) {
             _this.currentRedIndex = currentLineIndex
           }
@@ -548,7 +652,6 @@ export default {
             var swiperIndex = str.split('-')
             if (swiperIndex[1]) {
               var cumputedIndex = parseInt(parseInt(swiperIndex[1]) + 4) % 7
-              console.log('ss, ' + cumputedIndex)
               if (!cumputedIndex) {
                 cumputedIndex = 7
               }
@@ -563,6 +666,7 @@ export default {
           _this.defaultOpen = []
           _this.isChange = true
           _this.currentRedIndex = 0
+          _this.isDisplayLine = {}
           _this.currentBackground = 'unSelectBackground'
           _this.swiperSelet('', parseInt('2'))
         }
@@ -577,9 +681,17 @@ export default {
       ctx1.beginPath()
       ctx1.moveTo(740, 65)
       ctx1.bezierCurveTo(783, 78, 783, 104, 761, 108)
-      ctx1.lineTo(761, 200)
+      if (_this.isDisplayLine[6]) {
+        ctx1.lineTo(761, 200)
+      } else {
+        ctx1.moveTo(761, 200)
+      }
       ctx1.bezierCurveTo(784, 206, 784, 232, 740, 236)
-      ctx1.lineTo(740, 65)
+      if (_this.isDisplayLine[6]) {
+        ctx1.lineTo(740, 65)
+        ctx1.moveTo(776, 94)
+        ctx1.lineTo(776, 212)
+      }
       this.strokeFn(ctx1, p, e, ['2', '2-6'], 6)
       // 圆角矩形
       function Rect (x, y, w, h) {
@@ -624,6 +736,9 @@ export default {
       ctx1.beginPath()
       ctx1.moveTo(767, 0)
       ctx1.quadraticCurveTo(840, 151, 767, 312)
+      if (_this.isDisplayLine[3]) {
+        ctx1.lineTo(767, 0)
+      }
       this.strokeFn(ctx1, p, e, ['2', '2-3'], 3)
 
       // 大圆角矩形绘制
@@ -634,21 +749,32 @@ export default {
       ctx1.beginPath()
       ctx1.moveTo(77, 127)
       ctx1.quadraticCurveTo(430, 146, 942, 127)
-      ctx1.moveTo(942, 127)
-      ctx1.lineTo(942, 175)
+      if (_this.isDisplayLine[5]) {
+        ctx1.moveTo(942, 127)
+        ctx1.lineTo(942, 175)
+      } else {
+        ctx1.moveTo(942, 175)
+      }
       ctx1.quadraticCurveTo(430, 154, 77, 175)
       ctx1.lineTo(77, 127)
-      ctx1.moveTo(77, 151)
-      ctx1.lineTo(47, 151)
-      ctx1.moveTo(942, 151)
-      ctx1.lineTo(972, 151)
       this.strokeFn(ctx1, p, e, ['2', '2-5'], 5)
 
+      // 绘制横虚线
+      ctx1.beginPath()
+      ctx1.moveTo(37, 151)
+      ctx1.lineTo(982, 151)
+      ctx1.setLineDash([2])
+      ctx1.stroke()
+      ctx1.setLineDash([1, 0])
       // 绘制矩形
       ctx1.beginPath()
       ctx1.moveTo(588, 130)
       ctx1.lineTo(838, 130)
-      ctx1.lineTo(838, 170)
+      if (_this.isDisplayLine[2]) {
+        ctx1.lineTo(838, 170)
+      } else {
+        ctx1.moveTo(838, 170)
+      }
       ctx1.lineTo(588, 170)
       ctx1.moveTo(588, 120)
       ctx1.lineTo(588, 180)
@@ -656,7 +782,6 @@ export default {
       this.isChange = false
     },
     swiperTo (number) {
-      console.log('oooo,')
       this.mySwiper.swipeTo(parseInt(number) - 1, 0, false)
       this.mySwiper.startAutoplay()
     },
@@ -674,7 +799,6 @@ export default {
       domArrOpe = document.getElementsByClassName('swiper-slide')
       var domArrLength = domArrOpe.length
 
-      console.log('selectBorder: ' + className + ', ' + domArr2Ope)
       var classPromise = new Promise((resolve, reject) => {
         for (var i = 0; i < domArrLength; i++) {
           if (domArrOpe[i].classList.contains('selectBorder')) {
