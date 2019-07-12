@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import 'swiper/dist/idangerous.swiper.css'
+import 'swiper/dist/css/swiper.css'
 import 'babel-polyfill'
 import './assets/reset.css'
 Vue.use(ElementUI)

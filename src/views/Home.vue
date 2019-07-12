@@ -204,7 +204,7 @@
     -webkit-animation: borderColor-data-v-2459bd86 2s linear infinite;
     animation: borderColor-data-v-2459bd86 2s linear infinite;
     height: auto
-    
+
   }
   /*//这是样式修改*/
   .home {
@@ -497,7 +497,7 @@
 </style>
 
 <script>
-import Swiper from 'swiper/dist/idangerous.swiper'
+import Swiper from 'swiper/dist/js/swiper'
 export default {
   name: 'home',
   data () {
@@ -532,30 +532,32 @@ export default {
         loop: true, // 循环模式选项
         // loopAdditionalSlides:3,
         autoplay: {
-          delay: 0
+          delay: 10000000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true
         },
-        autoplayDisableOnInteraction: false,
+        // autoplayDisableOnInteraction: false,
         speed: 1600,
         slidesPerView: 6,
         // loopedSlides: 3,
-        // spaceBetween: 15,
+        spaceBetween: 15,
         freeMode: true,
-        roundLengths: true,
+        // roundLengths: true,
         observer: true
       })
-      _this.mySwiper.startAutoplay()
+      _this.mySwiper.autoplay.start()
     }, 0)
     var timer1 = null
     var timer2 = null
     var comtainer = document.getElementById('swipper1')
     comtainer.addEventListener('mouseenter', function () {
       console.log(':::::mmmm')
-      _this.mySwiper.stopAutoplay()
+      _this.mySwiper.autoplay.stop()
     })
     comtainer.addEventListener('mouseleave', function () {
       console.log(':::::kkkkkk')
       setTimeout(function () {
-        _this.mySwiper.startAutoplay()
+        _this.mySwiper.autoplay.start()
       }, 1000)
       // if (swiperMoveTimer) {
       //   clearTimeout(swiperMoveTimer)
@@ -849,8 +851,8 @@ export default {
       this.isChange = false
     },
     swiperTo (number) {
-      this.mySwiper.swipeTo(parseInt(number) - 1, 0, false)
-      this.mySwiper.startAutoplay()
+      this.mySwiper.slideTo(parseInt(number) - 1, 0, false)
+      this.mySwiper.autoplay.start()
     },
     swiperSelet (className, flag) {
       var _this = this
@@ -879,7 +881,7 @@ export default {
             domArrOpe[i].classList.remove('selectBorder')
           }
         }
-        _this.mySwiper.startAutoplay()
+        _this.mySwiper.autoplay.start()
         _this.visible = false
         resolve()
       })
@@ -887,7 +889,8 @@ export default {
         if (domArr2Ope.length > 0) {
           for (var k = 0; k < domArr2Ope.length; k++) {
             domArr2Ope[k].classList.add('selectBorder')
-            _this.mySwiper.stopAutoplay()
+            console.log(':::::mmmm')
+            _this.mySwiper.autoplay.stop()
             _this.visible = true
           }
         }
