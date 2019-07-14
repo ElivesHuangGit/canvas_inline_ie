@@ -129,13 +129,13 @@
     </div>
     <div class="swiper-container swiperDiv" id="swipper1" ref="mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide swiper-add-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33" target="_blank"><div class="pic_shadow"><text>大气瓶</text></div></a><img src="../assets/product11.png" alt="钢瓶"></div>
-        <div class="swiper-slide swiper-add-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=77" target="_blank"><div class="pic_shadow"><text>灯杆</text></div></a><img src="../assets/product12.png" alt="灯杆"></div>
-        <div class="swiper-slide swiper-add-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36" target="_blank"><div class="pic_shadow"><text>碟形/封头</text></div></a><img src="../assets/product13.png" alt="车轮毂"></div>
-        <div class="swiper-slide swiper-add-4"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36" target="_blank"><div class="pic_shadow"><text>车轮毂</text></div></a><img src="../assets/product14.png" alt="刹车鼓"></div>
-        <div class="swiper-slide swiper-add-5"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=76" target="_blank"><div class="pic_shadow"><text>灯杆</text></div></a><img src="../assets/product15.png" alt="灯杆"></div>
-        <div class="swiper-slide swiper-add-6"><a href="#" target="_blank"><div class="pic_shadow"><text>飞机发动机唇</text></div></a><img src="../assets/product16.png" alt="飞机发动机唇"></div>
-        <div class="swiper-slide swiper-add-7"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35" target="_blank"><div class="pic_shadow"><text>小气瓶/桶形</text></div></a><img src="../assets/product17.png" alt="桶形锥形钢制品"></div>
+        <div class="swiper-slide swiper-add-1"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=33" target="_blank"><div class="pic_shadow"><span>大气瓶</span></div></a><img src="../assets/product11.png" alt="钢瓶"></div>
+        <div class="swiper-slide swiper-add-2"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=77" target="_blank"><div class="pic_shadow"><span>灯杆</span></div></a><img src="../assets/product12.png" alt="灯杆"></div>
+        <div class="swiper-slide swiper-add-3"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36" target="_blank"><div class="pic_shadow"><span>碟形/封头</span></div></a><img src="../assets/product13.png" alt="车轮毂"></div>
+        <div class="swiper-slide swiper-add-4"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=36" target="_blank"><div class="pic_shadow"><span>车轮毂</span></div></a><img src="../assets/product14.png" alt="刹车鼓"></div>
+        <div class="swiper-slide swiper-add-5"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=76" target="_blank"><div class="pic_shadow"><span>灯杆</span></div></a><img src="../assets/product15.png" alt="灯杆"></div>
+        <div class="swiper-slide swiper-add-6"><a href="#" target="_blank"><div class="pic_shadow"><span>飞机发动机唇</span></div></a><img src="../assets/product16.png" alt="飞机发动机唇"></div>
+        <div class="swiper-slide swiper-add-7"><a href="http://www.mjcagt.com/product/ShowArticle.asp?ArticleID=35" target="_blank"><div class="pic_shadow"><span>小气瓶/桶形</span></div></a><img src="../assets/product17.png" alt="桶形锥形钢制品"></div>
       </div>
     </div>
   </div>
@@ -463,11 +463,34 @@
   .swiper-slide img{
     border: 4px #32478c solid;
   }
-  .swiper-slide .pic_shadow{
+  /*.control-shadow .pic_shadow{*/
+    /*display: none;*/
+  /*}*/
+  .pic_shadow span{
+    line-height: 82px;
     display: none;
   }
-  .pic_shadow text{
+  .control-shadow .pic_shadow span{
     line-height: 82px;
+    display: block !important;
+  }
+  .control-shadow .pic_shadow{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    display: block;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+  }
+  .swiper-slide .pic_shadow span{
+    line-height: 82px;
+    display: none;
+  }
+  .swiper-slide:hover .pic_shadow span{
+    line-height: 82px;
+    display: block !important;
   }
   .swiper-slide:hover .pic_shadow{
     width: 100%;
@@ -479,7 +502,6 @@
     background: rgba(0, 0, 0, .5);
     color: #fff;
   }
-
   .swiper-wrapper {
     -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
     -moz-transition-timing-function: linear !important;
@@ -532,12 +554,12 @@ export default {
         loop: true, // 循环模式选项
         // loopAdditionalSlides:3,
         autoplay: {
-          delay: 10000000,
+          delay: 0,
           stopOnLastSlide: false,
           disableOnInteraction: true
         },
         // autoplayDisableOnInteraction: false,
-        speed: 1600,
+        speed: 10000000,
         slidesPerView: 6,
         // loopedSlides: 3,
         spaceBetween: 15,
@@ -549,13 +571,18 @@ export default {
     }, 0)
     var timer1 = null
     var timer2 = null
-    var comtainer = document.getElementById('swipper1')
-    comtainer.addEventListener('mouseenter', function () {
+    var comtainer = document.getElementsByClassName('swiper-wrapper')[0]
+    comtainer.addEventListener('mouseenter', function (e) {
+      e = e || event
       console.log(':::::mmmm')
+      console.log(e)
+      console.log(e.target)
       _this.mySwiper.autoplay.stop()
     })
-    comtainer.addEventListener('mouseleave', function () {
-      console.log(':::::kkkkkk')
+    comtainer.addEventListener('mouseleave', function (e) {
+      e = e || event
+      console.log(':::::kkkkkk:')
+      console.log(e.target)
       setTimeout(function () {
         _this.mySwiper.autoplay.start()
       }, 1000)
@@ -580,8 +607,6 @@ export default {
     }, false)
     document.addEventListener('click', function (e) {
       e = e || window.event
-      console.log('isDisplayMoveIndex:')
-      console.log(_this.isDisplayMoveIndex)
       console.log(_this.isDisplayLine)
       if (!timer2) {
         timer2 = setTimeout(function () {
@@ -880,6 +905,9 @@ export default {
           if (domArrOpe[i].classList.contains('selectBorder')) {
             domArrOpe[i].classList.remove('selectBorder')
           }
+          if (domArrOpe[i].classList.contains('control-shadow')) {
+            domArrOpe[i].classList.remove('control-shadow')
+          }
         }
         _this.mySwiper.autoplay.start()
         _this.visible = false
@@ -888,7 +916,7 @@ export default {
       classPromise.then(result => {
         if (domArr2Ope.length > 0) {
           for (var k = 0; k < domArr2Ope.length; k++) {
-            domArr2Ope[k].classList.add('selectBorder')
+            domArr2Ope[k].classList.add('selectBorder', 'control-shadow')
             console.log(':::::mmmm')
             _this.mySwiper.autoplay.stop()
             _this.visible = true
