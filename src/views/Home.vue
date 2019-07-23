@@ -537,7 +537,8 @@ export default {
       mySwiper: null,
       imageDataFlag: false,
       isDisplayLine: {},
-      isDisplayMoveIndex: 0 // 记录鼠标移动到哪个index
+      isDisplayMoveIndex: 0, // 记录鼠标移动到哪个index
+      swiperMoveTimer: null
     }
   },
   mounted () {
@@ -559,7 +560,7 @@ export default {
           disableOnInteraction: true
         },
         // autoplayDisableOnInteraction: false,
-        speed: 10000000,
+        speed: 1600,
         slidesPerView: 6,
         // loopedSlides: 3,
         spaceBetween: 15,
@@ -577,18 +578,19 @@ export default {
       console.log(':::::mmmm')
       console.log(e)
       console.log(e.target)
-      _this.mySwiper.autoplay.stop()
+      this.swiperMoveTimer = setTimeout(function () {
+        _this.mySwiper.autoplay.stop()
+      }, 0)
     })
     comtainer.addEventListener('mouseleave', function (e) {
       e = e || event
       console.log(':::::kkkkkk:')
       console.log(e.target)
-      setTimeout(function () {
+      _this.mySwiper.autoplay.start()
+      if (this.swiperMoveTimer) {
+        clearTimeout(this.swiperMoveTimer)
         _this.mySwiper.autoplay.start()
-      }, 1000)
-      // if (swiperMoveTimer) {
-      //   clearTimeout(swiperMoveTimer)
-      // }
+      }
     })
     document.addEventListener('mousemove', function (e) {
       e = e || window.event
